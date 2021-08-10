@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/*********************************************/
+/********Standard fonts used by all pages*****/
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.fs-btn{
+  font-size: 0.9rem;
+}
+
+.fs-breadcrumb{
+  font-size: 0.8rem;
+}
+
+.fs-sidenav{
+  font-size: 0.8rem;
+}
+
+.fs-footer{
+  font-size: 0.8rem;
+}
+
+.fs-footer-header {
+  font-size: 0.9rem;
+}
+
+.fs-topnav{
+  font-size: 1rem;
+}
+
+.fs-item-name{
+  font-size: 0.9rem;
+}
+
+.fs-minute {
+  font-size: 0.9rem;
+}
+
+.fs-shop-name{
+  font-size: 12pt;
+}
+
+.fs-shop-description{
+  font-size: 9pt;
+}
+
+.fs-header{
+  font-size: 1rem;
+}
+
+.fs-nav{
+  font-size: 12pt;
+}
+
+.fs-alert{
+  font-size: 11pt;
+}
+
+.fs-bid-time{
+  font-size: 11pt;
+}
+
+.fs-bid-status{
+  font-size: 11pt;
+}
+
+.fs-bid-status-other-info{
+  font-size: 11pt;
+}
+
+.fs-bid-status{
+  font-size: 10pt;
+}
+
+.fs-bid-price{
+  font-size: 13pt;
+}
+
+.fs-shop{
+  font-size: 10pt;
+  text-decoration: none;
+  color: #212529;
+}
+
+.fs-shop:hover{
+  text-decoration: none;
+  color: #0d6efd;
+}

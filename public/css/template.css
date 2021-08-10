@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+:root {
+    --header-height: 3rem;
+    --nav-width: 68px;
+    --first-color: #4723D9;
+    --first-color-light: #AFA5D9;
+    --text-highlight: #8EE810;
+    --text-highlight-1: #9FFC1C;
+    --white-color: #fafafa;
+    --illustration-bg: #628fff;
+    --featured-bg: #21897E;
+    --item-catalog-bg: #3BA99C;
+    --event-catalog-bg: #885053;
+    --upcoming-bg: #423E28;
+    --body-font: 'Nunito', sans-serif;
+    --normal-font-size: 1rem;
+    --z-fixed: 100
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box
+}
+
+body {
+    position: relative;
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    transition: .5s
+}
+
+#mainContent {
+    padding: 0 1rem;
+}
+
+footer {
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none
+}
+
+#nav_bar_shadow {
+    position: fixed;
+    display: none;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 90;
+    background-color: rgba(26, 0, 56, 0.5);
+}
+
+.header {
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    z-index: var(--z-fixed);
+    transition: .5s
+}
+
+.header_toggle {
+    color: var(--first-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.header_icon {
+  color: var(--first-color);
+  font-size: 1rem;
+  cursor: pointer
+}
+
+.header_img {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden
+}
+
+.header_img img {
+    width: 40px
+}
+
+.l-navbar {
+    position: fixed;
+    top: 0;
+    left: -30%;
+    width: var(--nav-width);
+    height: 100vh;
+    padding: .5rem 1rem 0 0;
+    transition: .5s;
+    z-index: var(--z-fixed)
+}
+
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden
+}
+
+.nav_logo,
+.nav_link {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+    padding: .5rem 0 .5rem 1.5rem
+}
+
+.nav_logo {
+    margin-bottom: 2rem
+}
+
+.nav_logo-icon {
+    font-size: 1.25rem;
+    color: var(--white-color)
+}
+
+.nav_logo-name {
+    color: var(--white-color);
+    font-weight: 700
+}
+
+.nav_link {
+    position: relative;
+    color: var(--first-color-light);
+    margin-bottom: 1.5rem;
+    transition: .3s
+}
+
+.nav_link:hover {
+    color: var(--white-color)
+}
+
+.nav_icon {
+    font-size: 1rem
+}
+
+.show {
+    left: 0
+}
+
+.body-pd {
+    padding-left: var(--nav-width)
+}
+
+.nav_link.active {
+    color: var(--white-color)
+}
+
+.nav_link.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 32px;
+    background-color: var(--white-color)
+}
+
+.text-highlight {
+    font-size: 1.3rem;
+    color: var(--text-highlight);
+}
+
+#signOutIcon {
+    transform: rotate(180deg);
+}
+
+#brand-logo {
+    width: 1rem;
+}
+
+#wrapper {
+    height: 100%;
+}
+
+.illustration {
+    background: var(--illustration-bg);
+}
+
+.featured {
+    background: var(--featured-bg);
+}
+
+.featured-border {
+    border-color: var(--featured-bg);;
+}
+
+.item-catalog {
+    background: var(--item-catalog-bg);
+}
+
+.item-catalog-border {
+    border-color: var(--item-catalog-bg);;
+}
+
+.event-catalog {
+    background: var(--event-catalog-bg);
+}
+
+.event-catalog-border {
+    border-color: var(--event-catalog-bg);;
+}
+
+.upcoming-border {
+    border-color: var(--upcoming-bg);
+}
+
+.upcoming {
+    background: var(--upcoming-bg);
+}
+
+.edgeless {
+    border-radius: 1rem; 
+}
+
+.illustration .text-highlight {
+    color: var(--text-highlight-1);
+}
+
+.illustration p {
+    color: var(--white-color);
+}
+
+/* sidebar css */
+#dropdownMenu {
+    position: fixed !important;
+    z-index: 50;
+    left: 5% !important;
+    top: 0 !important;
+    width: 90% !important;
+    min-width: 10px !important;
+}
+
+#dropdownMenu.show {
+    animation: fade-in 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes fade-in {
+    from {transform: translateY(0px);}
+    to {transform: translateY(58px);}
+}
+  

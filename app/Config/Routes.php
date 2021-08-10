@@ -22,7 +22,7 @@ $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
-$routes->setAutoRoute(true);
+$routes->setAutoRoute(false);
 
 /*
  * --------------------------------------------------------------------
@@ -32,8 +32,22 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+//$routes->get('/', 'Home::index');
+$routes->add('/', 'Home::index');
 
+// sign in group routes for users
+$routes->add('sign_in/verification', 'User::verifyUser');
+
+// sign up group routes for users
+$routes->add('sign_up/request', 'Account::request');
+
+// sign out route for user
+$routes->add('sign_out', 'Account::signOut');
+
+// view any pages in account controller
+$routes->add('/(:any)', 'Account::view/$1');
+
+$routes->get('verify_account/(:any)', 'Account::activateAccount/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
