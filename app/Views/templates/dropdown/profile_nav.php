@@ -41,21 +41,21 @@
   
   <!-- buttons -->
   <li class="p-0 d-flex">
-    <div class="col-6 d-flex justify-content-center border-top p-1">
+    <div class="col-6 d-flex justify-content-center border-top">
       <button class="btn btn-sm btn-outline-primary border-0 w-100 p-2">
         <span class="small">
         <i class="far fa-envelope d-block text-center w-100"></i>Messages</span>
       </button>
     </div>
-    <div class="col-6 d-flex justify-content-center border-top border-start p-2">
-      <button class="btn btn-sm btn-outline-danger border-0 w-100 p-2">
+    <div class="col-6 d-flex justify-content-center border-top">
+      <a href="<?= site_url()?>profile" class="btn btn-sm btn-outline-danger border-0 w-100 p-2">
         <span class="small">
         <i class="far fa-user d-block text-center w-100"></i>My Profile</span>
-      </button>
+      </a>
     </div>
   </li>
   <li class="p-2 border-top d-flex justify-content-center border-top">
-    <a href="<?= site_url()?>sign_out" class="btn btn-sm btn-dark"><span class="small"><i id="signOutIcon" class="fas fa-sign-out-alt"></i> Sign Out</span></a>
+    <a href="<?= site_url()?>a/sign_out" class="btn btn-sm btn-primary"><span class="small"><i id="signOutIcon" class="fas fa-sign-out-alt"></i> Sign Out</span></a>
   </li>
 
 </ul>

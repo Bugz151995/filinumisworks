@@ -36,16 +36,21 @@ $routes->setAutoRoute(false);
 $routes->add('/', 'Home::index');
 
 // sign in group routes for users
-$routes->add('sign_in/verification', 'User::verifyUser');
+$routes->add('a/sign_in/verify', 'User::verifyUser');
 
 // sign up group routes for users
-$routes->add('sign_up/request', 'Account::request');
+$routes->add('a/sign_up/request', 'Account::request');
 
 // sign out route for user
-$routes->add('sign_out', 'Account::signOut');
+$routes->add('a/sign_out', 'Account::signOut');
 
 // view any pages in account controller
-$routes->add('/(:any)', 'Account::view/$1');
+$routes->add('a/(:any)', 'Account::view/$1');
+
+// view any static pages from the website
+$routes->add('(:segment)', 'Page::view/$1');
+$routes->add('consignments/items', 'Consignment::index');
+$routes->add('events/lots', 'Event::index');
 
 $routes->get('verify_account/(:any)', 'Account::activateAccount/$1');
 /*

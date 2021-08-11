@@ -34,7 +34,7 @@
         <p class="mb-4">Please sign in to your account.</p>
   
         <?= $validation->showError('password', 'error_single')?>
-        <?= form_open('sign_in/verification') ?>
+        <?= form_open('a/sign_in/verify') ?>
           <?= csrf_field() ?>
           
           <div class="row g-3 form-group">
@@ -55,7 +55,7 @@
           <hr class="mt-4">
           <div class="d-flex justify-content-between align-items-center">
             <div>
-              <span>No account? <a href="<?= site_url()?>sign_up" class="text-decoration-none">Sign up now</a></span>
+              <span>No account? <a href="<?= site_url()?>a/sign_up" class="text-decoration-none">Sign up now</a></span>
             </div>
             <div>
               <a href="recover" class="text-decoration-none btn btn-outline-primary border-0 rounded-pill"><span class="small">Recover Password</span></a>

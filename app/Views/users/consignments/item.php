@@ -3,33 +3,34 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
       <i class="fas fa-home"></i>
-      <a href="<?php echo base_url(); ?>" class="ms-2 link-secondary">Home</a>
+      <a href="<?= site_url(); ?>" class="ms-2 link-secondary">Home</a>
     </li>
     <li class="breadcrumb-item">
-      <a href="<?php echo base_url(); ?>consignments" class="link-secondary">Consignments</a>
+      <a href="<?= site_url(); ?>consignments" class="link-secondary">Consignments</a>
     </li>
     <li class="breadcrumb-item">Item</li>
   </ol>
 </nav>
 
 <?php if(isset($success)) {?>
-<?php if($success === TRUE){
-echo form_open('consignments/item/'.$items['item_id']).'<button class="btn btn-outline-success alert alert-success form-control w-100"><span><i class="me-2 fas fa-check-circle"></i>The Item has been successfully added to cart.</span></button>'.form_close();
-} else {
-echo validation_errors(form_open('consignments/item/'.$items['item_id']).'<button class="btn btn-outline-danger alert alert-danger form-control w-100"><span><i class="me-2 fas fa-exclamation-triangle"></i>', '</span></button>'.form_close());
-}}
+  <?php if($success === TRUE){
+  echo form_open('consignments/item/'.$items['item_id']).'<button class="btn btn-outline-success alert alert-success form-control w-100"><span><i class="me-2 fas fa-check-circle"></i>The Item has been successfully added to cart.</span></button>'.form_close();
+  } else {
+  echo validation_errors(form_open('consignments/item/'.$items['item_id']).'<button class="btn btn-outline-danger alert alert-danger form-control w-100"><span><i class="me-2 fas fa-exclamation-triangle"></i>', '</span></button>'.form_close());
+  }}
 ?>
+
 <!-- item description -->
 <section>
   <!-- item description / buy now / add to cart -->
   <div class="row py-4 pb-0">
     <div class="col-sm-7 pb-2">
-      <img src="<?php echo $items['file_path']?>" class="img-fluid" alt="">
+      <img src="<?= $items['file_path']?>" class="img-fluid" alt="">
     </div>
 
     <div class="col-sm-5 d-flex flex-column justify-content-between">
       <!-- item name -->
-      <h6 class="text-secondary text-uppercase text-center text-sm-start fw-bold lead"><?php echo $items['name']?></h6>
+      <h6 class="text-secondary text-uppercase text-center text-sm-start fw-bold lead"><?= $items['name']?></h6>
       <hr class="mt-0">
       <div class="row">
         <div class="col-5 text-secondary">
@@ -40,32 +41,32 @@ echo validation_errors(form_open('consignments/item/'.$items['item_id']).'<butto
         </div>
         <div class="col-7">
           <!-- item price -->
-          <h6>&#x20B1;<?php echo $items['item_price']?></h6>
+          <h6>&#x20B1;<?= $items['item_price']?></h6>
 
           <!-- item composition -->
-          <h6><?php echo $items['composition']?></h6>
+          <h6><?= $items['composition']?></h6>
 
           <!-- item weight -->
-          <h6><?php echo $items['weight']?> g</h6>
+          <h6><?= $items['weight']?> g</h6>
 
           <!-- item diameter -->
-          <h6><?php echo $items['diameter']?> mm</h6>
+          <h6><?= $items['diameter']?> mm</h6>
         </div>
       </div>
       <!-- buttons -->
       <div class="row justify-content-center py-2">
-        <?php echo form_open('', 'class="col-5"');?>
+        <?= form_open('', 'class="col-5"');?>
           <button class="btn btn-success w-100">Buy</button>
-        <?php echo form_close();?>
+        <?= form_close();?>
         
-        <?php echo form_open('consignments/add_to_cart', 'class="col-7"');?>
+        <?= form_open('consignments/add_to_cart', 'class="col-7"');?>
           <input type="hidden" name="item_id" value="<?= $items['item_id']?>">
           <input type="hidden" name="shop_id" value="<?= $items['shop_id']?>">
           <button class="btn btn-outline-success w-100">
             <i class="fas fa-cart-plus"></i>
             Add to Cart
           </button>
-        <?php echo form_close();?>
+        <?= form_close();?>
       </div>
     </div>
   </div>
@@ -81,7 +82,7 @@ echo validation_errors(form_open('consignments/item/'.$items['item_id']).'<butto
       <div id="notesContainer" class="w-100 accordion-collapse collapse show" aria-labelledby="notesHeader" data-bs-parent="#notesAccordion">
         <div class="accordion-body ps-2">
           <p>
-          <?php echo $items['note_description']?></p>
+          <?= $items['note_description']?></p>
         </div>
       </div>
     </div>
@@ -104,28 +105,28 @@ echo validation_errors(form_open('consignments/item/'.$items['item_id']).'<butto
           'class' => 'p-1 col-12 col-sm-6'
         );
       ?>
-      <?php echo form_open('consignments/item/'.$all_item['item_id'], $attibute);?>
+      <?= form_open('consignments/item/'.$all_item['item_id'], $attibute);?>
         <div class="card p-0 featured-border edgeless">
         <input type="hidden" name="shop_id" value="<?= $all_item['shop_id']?>">
           <button id="featuredItem" class="p-0 border-0 btn">
-            <img src="<?php echo $all_item['file_path'];?>" class="card-img-top p-2" alt="...">
+            <img src="<?= $all_item['file_path'];?>" class="card-img-top p-2" alt="...">
             <div class="card-body text-start featured">
               <div class="pb-1">
                 <i class="fas fa-coins fa-fw text-warning"></i>
-                <span class="ms-1 text-white text-lowercase"> <?php echo $all_item['name'];?></span>
+                <span class="ms-1 text-white text-lowercase"> <?= $all_item['name'];?></span>
               </div>
 
               <div class="fs-featured-item pb-0 pb-sm-1">
                 <i class="fas fa-fw fa-tags text-warning"></i>
                 <span class="ms-1 link-light">
                   &#x20B1;
-                  <?php echo $all_item['item_price'];?>
+                  <?= $all_item['item_price'];?>
                 </span>
               </div>
             </div>
           </button>
         </div>        
-      <?php echo form_close();?>
+      <?= form_close();?>
       </div>
       <?php endforeach; ?>
       <?php }?>

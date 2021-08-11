@@ -23,7 +23,7 @@
               <i class="fas fa-chevron-right"></i>
               Read more
             </a>
-            <a href="<?= site_url()?>sign_up" class="btn btn-warning">
+            <a href="<?= site_url()?>a/sign_up" class="btn btn-warning">
               <i class="fas fa-chevron-right"></i>
               Sign Up
             </a>

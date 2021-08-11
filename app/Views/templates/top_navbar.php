@@ -152,7 +152,7 @@
             </div>
           </li>
           <li class="p-2 border-top d-flex justify-content-center border-top">
-            <a href="<?= site_url()?>sign_in" class="btn btn-sm btn-primary"><span class="small"> Sign In</span></a>
+            <a href="<?= site_url()?>a/sign_in" class="btn btn-sm btn-primary"><span class="small"> Sign In</span></a>
           </li>
         </ul>
 

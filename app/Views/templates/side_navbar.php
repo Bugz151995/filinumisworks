@@ -28,19 +28,16 @@ $page = $uri->getSegment(1);
           <i class='fas fa-gavel fa-fw nav_icon'></i> 
           <span class="nav_name">Auction</span> 
         </a> 
-        <a href="<?= site_url();?>my_orders" class="nav_link <?= ($page == 'my-orders' ? 'active' : '') ?>"> 
+        <a href="<?= site_url();?>orders" class="nav_link <?= ($page == 'orders' ? 'active' : '') ?>"> 
           <i class='fas fa-list-ul fa-fw nav_icon'></i>
           <span class="nav_name">Order</span> 
         </a> 
-        <a href="<?= site_url();?>my_shop" class="nav_link <?= ($page == 'my-shop' ? 'active' : '') ?>"> 
+        <a href="<?= site_url();?>shop" class="nav_link <?= ($page == 'shop' ? 'active' : '') ?>"> 
           <i class='fas fa-book-reader fa-fw nav_icon'></i> <span class="nav_name">My Shop</span> 
         </a> 
-        <a href="<?= site_url();?>my_profile" class="nav_link <?= ($page == 'my-profile' ? 'active' : '') ?>"> 
-          <i class='fas fa-user fa-fw nav_icon'></i> <span class="nav_name">My Profile</span> 
-        </a> 
       </div>
-    </div> 
-    <a href="<?= site_url()?>sign_out" class="nav_link"> 
+    </div>
+    <a href="<?= site_url()?>a/sign_out" class="nav_link"> 
       <i id="signOutIcon" class='fas fa-sign-out-alt fa-fw nav_icon'></i> 
       <span class="nav_name">Sign Out</span> 
     </a>

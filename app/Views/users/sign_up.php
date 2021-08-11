@@ -34,7 +34,7 @@
           <span class="fs-5">it only takes a <span class="text-success">few seconds</span> to create your account</span>
         </h4>
 
-        <?= form_open('sign_up/request')?>
+        <?= form_open('a/sign_up/request')?>
           <?= csrf_field() ?>
           <div class="row">
             <div class="col-md-6">
@@ -82,7 +82,7 @@
             <?= $validation->showError('accept', 'error_single')?>
           </div>
           <div class="p-2 mt-4 row g-3 align-items-center justify-content-center">
-            <h5 class="mb-0 col-12 col-sm-8 order-2 order-sm-1 text-secondary fs-6">Already have an account? <a href="<?= site_url()?>sign_in" class="text-primary">Sign in</a></h5>
+            <h5 class="mb-0 col-12 col-sm-8 order-2 order-sm-1 text-secondary fs-6">Already have an account? <a href="<?= site_url()?>a/sign_in" class="text-primary">Sign in</a></h5>
             <button id="createAccountBtn" class="btn-shine-hover btn-primary btn rounded-pill ml-auto col-12 col-sm-4 order-1 order-sm-2" onclick="loadSpinner(this)">Create Account</button>
           </div>
         <?= form_close()?>
