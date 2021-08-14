@@ -135,7 +135,7 @@
         ?>
       </div>
 
-      <?php if (session()->get('logged_in') !== NULL) : ?>
+      <?php if (session()->get('islogged_in')) : ?>
 
         <?= $profile_nav?>
 
@@ -158,5 +158,10 @@
 
       <?php endif ?>
     </div>
+        
+    <!-- sign up -->
+    <?php if(session()->get('islogged_in') === NULL) :?>
+      <a href="<?= site_url()?>a/sign_up" class="ms-2 btn btn-sm btn-outline-primary rounded">Sign Up</a>
+    <?php endif?>
   </div>
 </header>

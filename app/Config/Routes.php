@@ -32,27 +32,25 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-//$routes->get('/', 'Home::index');
-$routes->add('/', 'Home::index');
 
-// sign in group routes for users
-$routes->add('a/sign_in/verify', 'User::verifyUser');
-
-// sign up group routes for users
-$routes->add('a/sign_up/request', 'Account::request');
-
-// sign out route for user
-$routes->add('a/sign_out', 'Account::signOut');
-
-// view any pages in account controller
-$routes->add('a/(:any)', 'Account::view/$1');
-
+$routes->get('/', 'Home::index');
 // view any static pages from the website
-$routes->add('(:segment)', 'Page::view/$1');
-$routes->add('consignments/items', 'Consignment::index');
-$routes->add('events/lots', 'Event::index');
+$routes->get('(:segment)', 'Page::view/$1');
 
+$routes->group('a', function($routes){
+	$routes->post('sign_up/request', 'Account::signup');
+	$routes->post('sign_in/verify', 'Account::signin');
+	$routes->get('sign_out', 'Account::signout');
+	$routes->get('(:any)', 'Account::view/$1');
+});
+
+// view an item or lot
+$routes->post('consignments/items', 'Consignment::index');
+$routes->post('events/lots', 'Event::index');
+
+// activate account
 $routes->get('verify_account/(:any)', 'Account::activateAccount/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

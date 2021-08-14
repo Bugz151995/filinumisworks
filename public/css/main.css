@@ -72,17 +72,6 @@
   }
 /* header css end */
 
-#featuredItem {
-  overflow: hidden;
-  border-radius: 1rem;
-  font-size: 0.85rem;
-}
-
-#featuredEvent {
-  overflow: hidden;
-  border-radius: 1rem;
-  font-size: 0.85rem;
-}
 
 #notesAccordion .accordion-button{
   background: white;
@@ -116,6 +105,12 @@
   background-position-y: bottom;
   border-top-left-radius: .3rem;
   border-top-right-radius: .3rem;
+}
+
+/* image catalog home */
+.img-catalog {
+  height: 145px;
+  object-fit: contain;
 }
 
 @media (min-width: 992px){  
@@ -396,11 +391,7 @@
   }
 
   /* home css */
-  #featuredItem {
-    font-size: 1rem;
-  }
-
-  #featuredEvent {
+  .fs-feat {
     font-size: 1rem;
   }
   
@@ -408,5 +399,10 @@
     left: 57% !important;
     top: 0 !important;
     width: 40% !important;
+  }
+
+  /* img catalog home */
+  .img-catalog {
+    height: 265px;
   }
 }

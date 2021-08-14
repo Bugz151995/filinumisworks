@@ -194,6 +194,7 @@ a {
 
 .featured {
     background: var(--featured-bg);
+    border-radius: 0;
 }
 
 .featured-border {

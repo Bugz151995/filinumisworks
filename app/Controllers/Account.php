@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\AccountModel;
+use App\Models\UserModel;
 use App\Models\ApprovalRequestModel;
 
 class Account extends BaseController {
@@ -10,9 +11,8 @@ class Account extends BaseController {
     return view('users/sign_in');
 	}
 
-  public function signOut() {
+  public function signout() {
     session()->destroy();
-
     return redirect()->to('/');
   }
 
@@ -24,7 +24,7 @@ class Account extends BaseController {
   }
 
   // create account and send email confirmation to user
-  public function request() {
+  public function signup() {
     $validation = \Config\Services::validation();
 
     if (!$this->validate($validation->getRuleGroup('signup'))) {
@@ -41,6 +41,25 @@ class Account extends BaseController {
       ];
 
       echo $this->confirmEmail($data);
+    }
+  }
+
+  public function signin() {
+    $validation = \Config\Services::validation();
+    $user_model = new UserModel();
+
+    if (!$this->validate($validation->getRuleGroup('signin'))) {
+      
+      return view('users/sign_in', [
+        'validation' => $this->validator
+      ]);      
+    }
+    else {
+      $data = $user_model->getUser($this->request->getPost('username'));
+      
+      session()->set($data);
+      session()->set('islogged_in', TRUE);
+      return redirect()->to('/');
     }
   }
 

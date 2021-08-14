@@ -12,6 +12,7 @@
   <title>FiliNumisworks</title>
 </head>
 <body>
+  <!-- main content -->
   <div class="app-container">
     <div class="col-lg-4 d-none d-md-block">
       <img src="<?= site_url()?>assets/images/sign_in_bg.png" id="sideBg" alt="">
